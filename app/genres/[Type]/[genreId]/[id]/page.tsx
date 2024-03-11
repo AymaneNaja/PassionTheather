@@ -1,25 +1,11 @@
-'use client'
-
-import MovieGenres from '@/Components/Genres/MovieGenre'
-import TvGenres from '@/Components/Genres/TvGenres'
-import { useParams } from 'next/navigation'
-import React, { useState } from 'react'
+import { Genres } from "@/Components/ShowCase/Genres"
 
 type Props = {}
 
 
-function page({ }: Props) {
-    const { Type, genreId, id }: any = useParams()
-
-    const [pageCount, setPageCount] = useState<number | string>(1)
-
-
+function page({ params }: { params: { Type: string, genreId: string, id: string } }) {
     return (
-        <div className='min-h-screen'>
-            {Type == 'tv' ? <TvGenres pagnation={true} title={genreId} id={id} /> : null}
-            {Type == 'movie' ? <MovieGenres pagnation={true} title={genreId} id={id} /> : null}
-
-        </div>
+        <Genres Type={params.Type} genreId={params.genreId} id={params.id} ></Genres>
     )
 }
 
