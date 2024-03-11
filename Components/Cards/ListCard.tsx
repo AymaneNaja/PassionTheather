@@ -28,8 +28,10 @@ const ListCard = ({
 }: Props) => {
 
     const handlePagnation = (event: React.ChangeEvent<unknown>, value: number) => {
-        setPage(value);
         window.scrollTo(0, 0)
+        if (setPage) {
+            return setPage(value);
+        }
 
     };
     const [showMore, setShowMore] = useState<boolean>(false)
