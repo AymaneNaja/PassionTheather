@@ -2,8 +2,6 @@ import { nanoid } from '@reduxjs/toolkit'
 import Link from 'next/link'
 import React from 'react'
 import { Rating } from '@mui/material';
-
-
 type Props = {
     data: any,
     type: string

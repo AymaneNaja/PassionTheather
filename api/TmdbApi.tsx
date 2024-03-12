@@ -1,7 +1,5 @@
-import React from 'react'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import build from 'next/dist/build'
-import { headers } from 'next/dist/client/components/headers'
+
 type Props = {}
 type paramTypes = {
     page: number | string,
