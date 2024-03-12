@@ -167,8 +167,7 @@ export const {
     useGetSearchMovieQuery,
     useGetSearchPersonQuery,
     useGetSearchTvQuery,
-    useGetSearchcompanyQuery
-
+    useGetSearchcompanyQuery,
 
 } = TmdbApi
 export default TmdbApi

@@ -1,7 +1,7 @@
 
 import AiringShows from '@/Components/Discover/AiringToday'
 import Intheaters from '@/Components/Discover/Intheaters'
-import LoadingDiscover from '@/Components/Discover/LoadingDiscover'
+
 import OntheAirShows from '@/Components/Discover/OntheAirShows'
 import PopularMovies from '@/Components/Discover/PopularMovies'
 import PopularShows from '@/Components/Discover/PopularShows'
