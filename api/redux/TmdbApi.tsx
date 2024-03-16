@@ -12,7 +12,7 @@ const TmdbApi = createApi({
     reducerPath: 'tmdb-api',
     baseQuery: fetchBaseQuery({
         baseUrl: 'https://api.themoviedb.org/3/', prepareHeaders: async (headers) => {
-            const res = (await fetch('http://localhost:3000/api/key'))
+            const res = (await fetch('/api/key'))
             const token = await res.json()
             if (token) {
                 return headers.set('Authorization', `Bearer ${token.key}`)
