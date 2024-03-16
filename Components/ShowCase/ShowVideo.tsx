@@ -1,5 +1,5 @@
 'use client'
-import { useGetMovieVideosQuery, useGetVideosQuery } from '@/api/TmdbApi'
+import { useGetVideosQuery } from '@/api/TmdbApi'
 import { nanoid } from '@reduxjs/toolkit'
 import React from 'react'
 import ReactPlayer from 'react-player'

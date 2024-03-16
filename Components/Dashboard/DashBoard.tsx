@@ -2,10 +2,7 @@
 import { useGetAllTrendingQuery } from '@/api/TmdbApi';
 import { DashboardSlide } from './DashboardSlide'
 import React, { useState } from 'react';
-import MediaTypeDash from './MediaTypeDash';
 import DashGenres from './DashGenres';
-import LoadingListCard from '../Cards/LoadingListCard';
-
 
 type Props = {}
 
