@@ -1,5 +1,5 @@
 'use client'
-import { useGetOnTheAirQuery } from '@/api/TmdbApi'
+import { useGetOnTheAirQuery } from '@/api/redux/TmdbApi'
 import React from 'react'
 import ListCard from '../Cards/ListCard'
 import LoadingListCard from '../Cards/LoadingListCard'

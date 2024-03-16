@@ -1,6 +1,6 @@
 import React from 'react'
 import ListCard from '../Cards/ListCard'
-import { useGetSimilarQuery } from '@/api/TmdbApi'
+import { useGetSimilarQuery } from '@/api/redux/TmdbApi'
 import LoadingListCard from '../Cards/LoadingListCard'
 
 type Props = {

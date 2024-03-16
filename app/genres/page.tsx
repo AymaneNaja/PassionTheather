@@ -1,5 +1,5 @@
 'use client'
-import { useGetGenreListQuery } from '@/api/TmdbApi'
+import { useGetGenreListQuery } from '@/api/redux/TmdbApi'
 import Genres from '@/Components/Genres/AllGenres'
 import React from 'react'
 

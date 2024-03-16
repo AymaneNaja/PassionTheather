@@ -1,5 +1,5 @@
 'use client'
-import { useGetTvshowQuery } from '@/api/TmdbApi'
+import { useGetTvshowQuery } from '@/api/redux/TmdbApi'
 import ShowCase from '@/Components/ShowCase/ShowCase'
 import ShowCaseLoading from '@/Components/ShowCase/ShowCaseLoading'
 

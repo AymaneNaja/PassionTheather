@@ -1,5 +1,5 @@
 'use client'
-import { useGetIntheatersQuery } from '@/api/TmdbApi'
+import { useGetIntheatersQuery } from '@/api/redux/TmdbApi'
 import React from 'react'
 import ListCard from '../Cards/ListCard'
 import LoadingListCard from '../Cards/LoadingListCard'

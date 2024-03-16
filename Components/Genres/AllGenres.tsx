@@ -1,5 +1,5 @@
 'use client'
-import { useGetGenreListQuery } from '@/api/TmdbApi'
+import { useGetGenreListQuery } from '@/api/redux/TmdbApi'
 import { Skeleton } from '@mui/material'
 import Link from 'next/link'
 import { type } from 'os'

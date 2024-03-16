@@ -1,5 +1,5 @@
 'use client'
-import { useGetTrendingtvShowsQuery } from '@/api/TmdbApi'
+import { useGetTrendingtvShowsQuery } from '@/api/redux/TmdbApi'
 import React from 'react'
 import BigCard from '../Cards/BigCard'
 import Genres from '../Genres/AllGenres'

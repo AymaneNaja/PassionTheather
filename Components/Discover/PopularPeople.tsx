@@ -1,5 +1,5 @@
 'use client'
-import { useGetTrendingPeopleQuery } from '@/api/TmdbApi'
+import { useGetTrendingPeopleQuery } from '@/api/redux/TmdbApi'
 import React from 'react'
 import { PersonCard } from '../Cards/PerSonCard'
 

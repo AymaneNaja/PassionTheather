@@ -1,5 +1,5 @@
 'use client'
-import { useGetMovieQuery } from '@/api/TmdbApi'
+import { useGetMovieQuery } from '@/api/redux/TmdbApi'
 import ShowCase from '@/Components/ShowCase/ShowCase'
 import { useParams } from 'next/navigation'
 import ShowCaseLoading from '@/Components/ShowCase/ShowCaseLoading'

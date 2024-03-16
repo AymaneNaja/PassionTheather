@@ -1,5 +1,5 @@
 'use client'
-import { useGetCollectionQuery } from '@/api/TmdbApi'
+import { useGetCollectionQuery } from '@/api/redux/TmdbApi'
 import React from 'react'
 import { Overview } from '@/Components/ShowCase/Overview'
 import { TitleRating } from '@/Components/ShowCase/TitleRating'

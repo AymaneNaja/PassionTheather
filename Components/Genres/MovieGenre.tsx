@@ -1,5 +1,5 @@
 'use client'
-import { useGetMovieByParamsQuery } from '@/api/TmdbApi'
+import { useGetMovieByParamsQuery } from '@/api/redux/TmdbApi'
 import React, { useState } from 'react'
 import ListCard from '../Cards/ListCard'
 import LoadingListCard from '../Cards/LoadingListCard'

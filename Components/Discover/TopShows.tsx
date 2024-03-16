@@ -1,5 +1,5 @@
 'use client'
-import { useGetOnTheAirQuery, useGetTopRatedShowsQuery } from '@/api/TmdbApi'
+import { useGetOnTheAirQuery, useGetTopRatedShowsQuery } from '@/api/redux/TmdbApi'
 import React from 'react'
 import ListCard from '../Cards/ListCard'
 import LoadingListCard from '../Cards/LoadingListCard'

@@ -1,7 +1,5 @@
-import React from 'react'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import build from 'next/dist/build'
-import { headers } from 'next/dist/client/components/headers'
+
 type Props = {}
 type paramTypes = {
     page: number | string,
@@ -13,10 +11,13 @@ type paramTypes = {
 const TmdbApi = createApi({
     reducerPath: 'tmdb-api',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'https://api.themoviedb.org/3/', prepareHeaders: (headers => {
-            const api_key = process.env.NEXT_PUBLIC_API_KEY
-            headers.set('Authorization', `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3OWUyNmIyODhhZjBmOGYxOGExYWIyMjA5YzhhOTY4OSIsInN1YiI6IjY0YjdlM2RmYjFmNjhkMDBhZTMzZjhmNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Q-thcZLk2DbP7SojHqNecF5P7iZf-2MJvaZl7H3j2KI`)
-        })
+        baseUrl: 'https://api.themoviedb.org/3/', prepareHeaders: async (headers) => {
+            const res = (await fetch('http://localhost:3000/api/key'))
+            const token = await res.json()
+            if (token) {
+                return headers.set('Authorization', `Bearer ${token.key}`)
+            }
+        },
     }),
     endpoints: (builder) => ({
 
@@ -167,8 +168,7 @@ export const {
     useGetSearchMovieQuery,
     useGetSearchPersonQuery,
     useGetSearchTvQuery,
-    useGetSearchcompanyQuery
-
+    useGetSearchcompanyQuery,
 
 } = TmdbApi
 export default TmdbApi

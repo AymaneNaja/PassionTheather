@@ -1,5 +1,5 @@
 'use client'
-import { useGetTvshowSeasonQuery } from '@/api/TmdbApi'
+import { useGetTvshowSeasonQuery } from '@/api/redux/TmdbApi'
 import { ImageIntroduction } from '@/Components/ShowCase/ImageIntroduction'
 import { Overview } from '@/Components/ShowCase/Overview'
 import ShowCase from '@/Components/ShowCase/ShowCase'

@@ -1,5 +1,5 @@
 'use client'
-import { useGetMultiSearchQuery } from '@/api/TmdbApi'
+import { useGetMultiSearchQuery } from '@/api/redux/TmdbApi'
 import ListCard from '@/Components/Cards/ListCard'
 import CollectionResults from '@/Components/Search/CollectionResults'
 import MovieResults from '@/Components/Search/MovieResults'

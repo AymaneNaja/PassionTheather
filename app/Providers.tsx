@@ -2,7 +2,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
-import TmdbApi from '@/api/TmdbApi'
+import TmdbApi from '@/api/redux/TmdbApi'
 
 
 function Providers({ children }: { children: React.ReactNode }) {

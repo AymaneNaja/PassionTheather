@@ -1,7 +1,7 @@
 'use Client'
 import React from 'react'
 import Credits from '../ShowCase/Credits'
-import { useGetPersonDetailsQuery, useGetSearchPersonQuery } from '@/api/TmdbApi'
+import { useGetPersonDetailsQuery, useGetSearchPersonQuery } from '@/api/redux/TmdbApi'
 import Link from 'next/link'
 import { AiTwotoneHeart } from 'react-icons/ai'
 import { LoadingCastCards } from '../ShowCase/LoadingCastCards'

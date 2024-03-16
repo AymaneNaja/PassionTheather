@@ -20,7 +20,6 @@ export function DashboardSlide({
         swipeToSlide: true,
         autoplaySpeed: 8000,
         cssEase: "linear"
-
     };
     return <Slider {...settings}>
         {data.results.map((result: any) => {
@@ -34,8 +33,7 @@ export function DashboardSlide({
                             <h1 className={`
                             font-extrabold text-3xl
                             md:text-4xl lg:text-5xl
-                            text-white 
-                             `}>
+                            text-white `}>
                                 {result.title ? result.title : result.name}
                             </h1>
                             <Rating size={'medium'} readOnly defaultValue={2.5} value={result.vote_average / 2} />

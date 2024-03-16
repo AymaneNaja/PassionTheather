@@ -1,5 +1,5 @@
 'use client'
-import { useGetUpcomingMoviesQuery } from '@/api/TmdbApi'
+import { useGetUpcomingMoviesQuery } from '@/api/redux/TmdbApi'
 import React from 'react'
 import ListCard from '../Cards/ListCard'
 import LoadingListCard from '../Cards/LoadingListCard'
