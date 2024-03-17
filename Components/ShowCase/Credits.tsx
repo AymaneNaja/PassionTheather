@@ -18,11 +18,8 @@ const Credits = ({ id, type }: Props) => {
 
       <h1 className={`
       py-1
-       text-2xl
-       sm:text-3xl
-       md:text-3xl
-       lg:text-5xl
-      bg-gradient-to-r text-transparent bg-clip-text from-violet-600 to-purple-900 font-extrabold  `}>
+       text-5xl
+      bg-gradient-to-r text-transparent bg-clip-text from-indigo-400 to-violet-800 font-extrabold animate-text  transition ease-in mb-2 `}>
         Cast
       </h1>
       <div className={` w-full flex justify-start  items-start gap-2 overflow-scroll  py-4 scrolly`}>

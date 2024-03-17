@@ -5,10 +5,7 @@ export function TitleRating({
     vote_average, title, rating, air_date, extrastyle
 }: { vote_average?: number, title: string, rating?: boolean, air_date?: string, extrastyle?: string }) {
 
-    return <div className={`flex justify-start items-center gap-2  text-2xl
-                sm:text-3xl
-                md:text-3xl
-                lg:text-5xl`}>
+    return <div className={`flex justify-start items-center gap-2 text-5xl`}>
 
         {
             /* title */

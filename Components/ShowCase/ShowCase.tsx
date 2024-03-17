@@ -27,7 +27,7 @@ const ShowCase = ({ data, type }: Props) => {
                     <ImageIntroduction backdropPath={data.backdrop_path} posterPath={data.poster_path} adult={data.adult} />
 
                 </div>
-                <div className='w-full px-10  mt-20  lg:w-9/12 mx-auto '>
+                <div className='w-full px-5 lg:px-8  mt-20  lg:w-9/12 mx-auto '>
                     <TitleRating title={type != 'tv' ? data.title : data.name} vote_average={data.vote_average} />
                     {/* tagline */}
                     <Tagline tagline={data.tagline} />
@@ -44,17 +44,17 @@ const ShowCase = ({ data, type }: Props) => {
                             revenue={data.revenue}
                             production_companies={data.production_companies} production_countries={data.production_countries} />
                             : null}{/* cast */}
-                        <Credits type={type} id={data.id} />
-
-                        {data.belongs_to_collection != null && type == 'movie' ? <Collection type={type} belongs_to_collection={data.belongs_to_collection} /> : null}
-                        {type == 'tv' ?
-                            <Season backdrop_path={data.backdrop_path} id={data.id} data={data} /> : null}
-
-                        <ShowVideo type={type} id={data.id} />
                     </div>
                 </div>
+                <div className={'w-full lg:w-9/12 mx-auto px-2 lg:px-14'}>
+                    <Credits type={type} id={data.id} />
 
+                    {data.belongs_to_collection != null && type == 'movie' ? <Collection type={type} belongs_to_collection={data.belongs_to_collection} /> : null}
+                    {type == 'tv' ?
+                        <Season backdrop_path={data.backdrop_path} id={data.id} data={data} /> : null}
 
+                    <ShowVideo type={type} id={data.id} />
+                </div>
             </div >
             <div className='lg:w-11/12 mx-auto lg:px-14 w-full'>
                 <Recomendations type={type} id={data.id} />

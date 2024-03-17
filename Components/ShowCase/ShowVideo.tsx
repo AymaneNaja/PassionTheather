@@ -14,11 +14,9 @@ function ShowVideo({ id, type }: Props) {
     const { data, isSuccess } = useGetVideosQuery({ type, id })
 
     return (<>
-        <h1 className={` text-5xl
-        sm:text-5xl
-        md:text-4xl
-        lg:text-5xl
-        bg-gradient-to-r text-transparent bg-clip-text from-violet-600 to-purple-900 font-extrabold py-2`}>
+        <h1 className={`  py-1
+      text-5xl
+      bg-gradient-to-r text-transparent bg-clip-text from-indigo-400 to-violet-800 font-extrabold animate-text  transition ease-in mb-2`}>
             Trailers
         </h1>
         <div className='flex overflow-scroll no-scrollbar justify-start items-start gap-2 mb-8'>
