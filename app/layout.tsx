@@ -19,16 +19,16 @@ export default function RootLayout({
 
 
   return (
-    <Providers>
-      <html data-theme={'light'} lang="en ">
-        <body className={inter.className + 'max-w-lg'}>
+    <html data-theme={'light'} lang="en ">
+      <body className={inter.className + 'max-w-lg'}>
+        <Providers>
           <Navbar />
           <div className='min-h-screen'>
             {children}
           </div>
-          <Footer />
-        </body>
-      </html>
-    </Providers>
+        </Providers>
+        <Footer />
+      </body>
+    </html>
   )
 }
