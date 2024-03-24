@@ -3,6 +3,7 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
 import TmdbApi from '@/api/redux/TmdbApi'
+import { SessionProvider } from 'next-auth/react'
 
 
 function Providers({ children }: { children: React.ReactNode }) {
@@ -13,9 +14,11 @@ function Providers({ children }: { children: React.ReactNode }) {
         middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(TmdbApi.middleware),
     })
     return (
-        <Provider store={store}>
-            {children}
-        </Provider>
+        <SessionProvider>
+            <Provider store={store}>
+                {children}
+            </Provider>
+        </SessionProvider>
     )
 }
 

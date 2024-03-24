@@ -13,8 +13,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  authModal
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  authModal: React.ReactNode
 }) {
 
 
@@ -24,7 +26,8 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           <div className='min-h-screen'>
-            {children}
+            <div>{authModal}</div>
+            <div>{children}</div>
           </div>
         </Providers>
         <Footer />

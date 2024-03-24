@@ -8,20 +8,28 @@ import { changeNavigation } from '@/Slices/NavSlice'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import { useSession } from 'next-auth/react'
+import { FaSignOutAlt } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
+
 function classNameNames(...classNamees: any) {
     return classNamees.filter(Boolean).join(' ')
 }
 
 export default function Navbar() {
     const currentPath = usePathname()
+    const { status, data } = useSession()
+    const [userSigned, setUserSigned] = useState<boolean>(false)
+    useEffect(() => {
+        if (status === 'authenticated') {
+            return setUserSigned(true)
+        }
+        return setUserSigned(false)
+    }, [status])
 
     return (
 
         <div className="drawer  ">
-
-
-
-
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
                 {/* Navbar */}
@@ -47,7 +55,25 @@ export default function Navbar() {
                             <li className={`${currentPath == '/Genres' ? "text-purple-500 font-extrabold" : "font-bold text-slate-500"}`}><Link href="/genres" >Genres</Link></li>
                         </ul>
                     </div>
+                    {userSigned && data?.user ? <div className="dropdown dropdown-end ">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            </div>
+                        </div>
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 transition-all">
+                            <div className='flex flex-col justify-center items-center pb-2'>
+                                <p className='text-center font-bold text-lg text-violet-600'>{data.user.name}</p>
+                                <p className='text-slate-500 font-semibold overflow'>{data.user.email}</p>
+                            </div>
+                            <li className={'font-bold text-slate-500 flex '}>
+                                <a><CgProfile size={18} />Profile</a></li>
+                            <li className={'font-bold text-rose-500 hover:bg-rose-500 rounded-lg hover:text-white flex '}>
+                                <Link href={'/signout'}><FaSignOutAlt size={18} />Sign out</Link></li>
+                        </ul>
+                    </div> : <Link href={'/auth/signin'}><button className='p-2 px-3 hover:ring-2 ring-0 transition-all ring-purple-600  text-white  from-purple-500 to-purple-800 bg-gradient-to-r hover:bg-clip-text hover:text-transparent  rounded-lg  font-bold' >sign in</button></Link>}
                 </div>
+
                 {/* Page content here */}
             </div>
             <div className="drawer-side z-30">
@@ -59,6 +85,8 @@ export default function Navbar() {
                     <li className={` rounded-lg my-1 ${currentPath == '/genres' ? "bg-purple-600 text-white  font-extrabold" : "font-bold text-slate-500"}`}><Link href="/genres" >Genres</Link></li>
                 </ul>
             </div>
+
+
         </div>
 
 

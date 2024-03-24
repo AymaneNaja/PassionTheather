@@ -19,8 +19,9 @@ const TmdbApi = createApi({
             }
         },
     }),
-    endpoints: (builder) => ({
 
+    endpoints: (builder) => ({
+        // user
         getPopular: builder.query({
             query: (type) => `https://api.themoviedb.org/3/${type}/popular`
         }),
