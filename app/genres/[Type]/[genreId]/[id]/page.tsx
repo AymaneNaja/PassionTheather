@@ -1,4 +1,5 @@
-import { Genres } from "@/Components/ShowCase/Genres"
+import Genres from "@/Components/Genres/Genres"
+
 
 type Props = {}
 

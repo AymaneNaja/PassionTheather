@@ -19,9 +19,7 @@ function Signout({ }: Props) {
                 <div className="modal-action">
                     <button onClick={() => router.back()} className="btn font-bold">No,Cancel</button>
                     <button onClick={async () => {
-                        await signOut()
-                        router.back()
-                        router.refresh()
+                        await signOut({ redirect: true, callbackUrl: '/' })
                     }} className=" p-2 rounded-lg text-center hover:bg-white hover:ring-rose-500 ring-2 transition-all hover:text-rose-500 ring-transparent bg-rose-500 text-white font-bold ">Yes,sign out</button>
                 </div>
             </div>

@@ -13,13 +13,12 @@ import Similar from '../Similar/Similar';
 import Recomendations from '../Recomendations/Recomendations';
 import Credits from './Credits'
 import ShowVideo from './ShowVideo';
-
+import Favorite from './Favorite'
 
 
 type Props = { data: any, type: string }
 
 const ShowCase = ({ data, type }: Props) => {
-    console.log(data)
     return (
         <>
             <div className='w-full m-auto min-h-screen'>
@@ -27,11 +26,14 @@ const ShowCase = ({ data, type }: Props) => {
                     <ImageIntroduction backdropPath={data.backdrop_path} posterPath={data.poster_path} adult={data.adult} />
 
                 </div>
-                <div className='w-full px-5 lg:px-8  mt-20  lg:w-9/12 mx-auto '>
-                    <TitleRating title={type != 'tv' ? data.title : data.name} vote_average={data.vote_average} />
-                    {/* tagline */}
-                    <Tagline tagline={data.tagline} />
-                    {/* details*/}
+                <div className='w-full px-5 lg:px-8  mt-20  lg:w-9/12 mx-auto  '>
+                    <div className={'flex justify-between items-center'}>
+                        <div>
+                            <TitleRating title={type != 'tv' ? data.title : data.name} vote_average={data.vote_average} />
+                            {/* tagline */}
+                            <Tagline tagline={data.tagline} /></div>
+                        {/* like button*/}
+                        <Favorite type={type} id={data.id} /></div>
                     <div>
                         {/* movie genres add link to genre */}
                         <Genres genres={data.genres} />

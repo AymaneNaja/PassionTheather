@@ -8,25 +8,22 @@ import { changeNavigation } from '@/Slices/NavSlice'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { useSession } from 'next-auth/react'
+import { getSession, useSession } from 'next-auth/react'
 import { FaSignOutAlt } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/app/api/auth/[...nextauth]/route'
+import { IoHeart } from "react-icons/io5";
 
 function classNameNames(...classNamees: any) {
     return classNamees.filter(Boolean).join(' ')
 }
 
+
+
 export default function Navbar() {
     const currentPath = usePathname()
-    const { status, data } = useSession()
-    const [userSigned, setUserSigned] = useState<boolean>(false)
-    useEffect(() => {
-        if (status === 'authenticated') {
-            return setUserSigned(true)
-        }
-        return setUserSigned(false)
-    }, [status])
-
+    const { update, status, data } = useSession()
     return (
 
         <div className="drawer  ">
@@ -55,23 +52,28 @@ export default function Navbar() {
                             <li className={`${currentPath == '/Genres' ? "text-purple-500 font-extrabold" : "font-bold text-slate-500"}`}><Link href="/genres" >Genres</Link></li>
                         </ul>
                     </div>
-                    {userSigned && data?.user ? <div className="dropdown dropdown-end ">
+                    {status == "loading" ? <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                        <div className="skeleton w-10 h-10 rounded-full">
+                        </div>
+                    </div> : null}
+                    {status === 'authenticated' && data.user ? <div className="dropdown dropdown-end ">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                <img alt="Tailwind CSS Navbar component" src={data.user.image ? data.user.image : 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'} />
                             </div>
                         </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 transition-all">
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow bg-base-100 rounded-box w-52 transition-all">
                             <div className='flex flex-col justify-center items-center pb-2'>
-                                <p className='text-center font-bold text-lg text-violet-600'>{data.user.name}</p>
-                                <p className='text-slate-500 font-semibold overflow'>{data.user.email}</p>
+                                <p className='text-center font-bold text-lg text-violet-600 '>{data?.user?.name}</p>
+                                <p className='text-slate-500 font-semibold overflow bg-slt'>{data?.user?.email}</p>
                             </div>
-                            <li className={'font-bold text-slate-500 flex '}>
-                                <a><CgProfile size={18} />Profile</a></li>
-                            <li className={'font-bold text-rose-500 hover:bg-rose-500 rounded-lg hover:text-white flex '}>
+                            <li className={'font-bold text-slate-500 flex  bg-inherit pb-1 '}>
+                                <Link href={'/Favorites'}><IoHeart size={18} />Favorites</Link></li>
+                            <li className={'font-bold text-rose-500 hover:bg-rose-500 rounded-lg hover:text-white flex pb-1 '}>
                                 <Link href={'/signout'}><FaSignOutAlt size={18} />Sign out</Link></li>
                         </ul>
-                    </div> : <Link href={'/auth/signin'}><button className='p-2 px-3 hover:ring-2 ring-0 transition-all ring-purple-600  text-white  from-purple-500 to-purple-800 bg-gradient-to-r hover:bg-clip-text hover:text-transparent  rounded-lg  font-bold' >sign in</button></Link>}
+                    </div> : null}
+                    {status == 'unauthenticated' ? <Link href={'/auth/signin'}><button className='p-2 px-3 hover:ring-2 ring-0 transition-all ring-purple-600  text-white  from-purple-500 to-purple-800 bg-gradient-to-r hover:bg-clip-text hover:text-transparent  rounded-lg  font-bold' >sign in</button></Link> : null}
                 </div>
 
                 {/* Page content here */}
@@ -79,10 +81,23 @@ export default function Navbar() {
             <div className="drawer-side z-30">
                 <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
                 <ul className="menu active:text-white  p-5 w-80 min-h-full bg-base-200">
+                    {status === 'authenticated' && data.user ? <div className="flex flex-col justify-center items-center gap-2 w-full mb-4">
+                        <div className=" avatar w-full mx-auto grid justify-center">
+                            <div className=" w-[72px] m-auto  rounded-full">
+                                <img alt="Tailwind CSS Navbar component" src={data.user.image ? data.user.image : 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'} />
+                            </div>
+                        </div>
+                        <div className='flex flex-col justify-center items-center pb-2 '>
+                            <p className='text-center font-bold text-xl text-violet-600'>{data?.user?.name}</p>
+                            <p className='text-slate-500 font-semibold overflow'>{data?.user?.email}</p>
+                        </div>
+                    </div> : null}
                     <li className={` rounded-lg my-1 ${currentPath == '/' ? "bg-purple-600 text-white font-extrabold" : "font-bold text-slate-500"}`}><Link href="/"  >Dashboard</Link></li>
                     <li className={` rounded-lg my-1 ${currentPath == '/Discover' ? "bg-purple-600 text-white font-extrabold" : "font-bold text-slate-500"}`}><Link href="/Discover" >Discover</Link></li>
                     <li className={` rounded-lg my-1 ${currentPath == '/Find' ? "bg-purple-600 text-white font-extrabold" : "font-bold text-slate-500"}`}><Link href="/Find"  >Find</Link></li>
                     <li className={` rounded-lg my-1 ${currentPath == '/genres' ? "bg-purple-600 text-white  font-extrabold" : "font-bold text-slate-500"}`}><Link href="/genres" >Genres</Link></li>
+                    {status === 'authenticated' && data.user ? <li className={"font-bold bg-rose-100 rounded-lg text-rose-700 hover:bg-rose-500 hover:text-white transition-all"}><Link href="/signout" >Sign out</Link></li> : null}
+
                 </ul>
             </div>
 
