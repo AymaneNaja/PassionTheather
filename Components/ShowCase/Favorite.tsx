@@ -9,7 +9,7 @@ type Props = {}
 
 function Favorite({ id, type }: { id: string, type: string }) {
     const [err, setErr] = useState('')
-    const { data: session } = useSession()
+    const { data: session }: any = useSession()
     const { data, isLoading, isSuccess, isError } = useGetUserFavsQuery({ id: session?.user?.id })
     const [PostFav] = usePostUserFavsMutation()
     const [DeleteFav] = useDeleteUserFavsMutation()

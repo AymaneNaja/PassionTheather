@@ -11,10 +11,7 @@ import Link from 'next/link'
 import { getSession, useSession } from 'next-auth/react'
 import { FaSignOutAlt } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 import { IoHeart } from "react-icons/io5";
-
 function classNameNames(...classNamees: any) {
     return classNamees.filter(Boolean).join(' ')
 }
