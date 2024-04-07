@@ -8,7 +8,7 @@ import bcrypt from 'bcrypt';
 import GitHubProvider from 'next-auth/providers/github';
 import GoogleProvider from "next-auth/providers/google";
 
-export const authOptions: AuthOptions = {
+const authOptions: AuthOptions = {
     session: {
         strategy: 'jwt'
     },
