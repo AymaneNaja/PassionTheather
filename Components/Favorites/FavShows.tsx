@@ -2,7 +2,6 @@
 import { useGetMovieByParamsQuery, useGetMovieQuery } from '@/api/redux/TmdbApi'
 import React, { useState } from 'react'
 import LoadingListCard from '../Cards/LoadingListCard'
-import ListCard from '../Cards/ListCard'
 import { SingleCard } from '../Cards/SingleCard'
 import { useGetUserFavsQuery } from '@/api/redux/UserApi'
 import SingleFav from './FavMovie'

@@ -1,6 +1,5 @@
 'use client'
 import { Season } from './Season';
-import { Producers } from './Producers';
 import { Collection } from './Collection';
 import { Detail } from './Detail';
 import { Overview } from './Overview';
