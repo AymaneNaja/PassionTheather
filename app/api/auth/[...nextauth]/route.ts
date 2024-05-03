@@ -17,7 +17,7 @@ const authOptions: AuthOptions = {
         signOut: '/signout'
 
     },
-    secret: process.env.AUTH_SECRET,
+    secret: process.env.NEXTAUTH_SECRET,
     providers: [
         GitHubProvider({
             clientId: process.env.GITHUB_ID as string,

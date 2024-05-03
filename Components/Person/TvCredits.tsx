@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import ListCard from '../Cards/ListCard'
-import { useGetPersonTvCreditsQuery } from '@/api/redux/TmdbApi'
+import { useGetPersonTvCreditsQuery } from '@/redux/TmdbApi'
 
 type Props = {
   id: string | number

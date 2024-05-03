@@ -1,10 +1,10 @@
 'use client'
-import { useGetMovieByParamsQuery, useGetMovieQuery } from '@/api/redux/TmdbApi'
+import { useGetMovieByParamsQuery, useGetMovieQuery } from '@/redux/TmdbApi'
 import React, { useState } from 'react'
 import LoadingListCard from '../Cards/LoadingListCard'
 import ListCard from '../Cards/ListCard'
 import { SingleCard } from '../Cards/SingleCard'
-import { useGetUserFavsQuery } from '@/api/redux/UserApi'
+import { useGetUserFavsQuery } from '@/redux/UserApi'
 import SingleFav from './FavMovie'
 import FavMovie from './FavMovie'
 

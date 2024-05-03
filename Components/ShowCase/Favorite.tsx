@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react'
 import { FaHeart } from "react-icons/fa";
-import { useGetUserFavsQuery, useDeleteUserFavsMutation, usePostUserFavsMutation } from '../../api/redux/UserApi'
+import { useGetUserFavsQuery, useDeleteUserFavsMutation, usePostUserFavsMutation } from '../../redux/UserApi'
 import { useSession } from 'next-auth/react';
 type Props = {}
 

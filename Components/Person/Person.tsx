@@ -1,5 +1,5 @@
 'use client'
-import { useGetPersonDetailsQuery } from '@/api/redux/TmdbApi'
+import { useGetPersonDetailsQuery } from '@/redux/TmdbApi'
 import MovieCredits from '@/Components/Person/MovieCredits'
 import TvCredits from '@/Components/Person/TvCredits'
 import React, { useState } from 'react'

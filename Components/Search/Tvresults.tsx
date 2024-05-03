@@ -1,5 +1,5 @@
 'use client'
-import { useGetSearchTvQuery } from '@/api/redux/TmdbApi'
+import { useGetSearchTvQuery } from '@/redux/TmdbApi'
 import React from 'react'
 import ListCard from '../Cards/ListCard'
 import LoadingListCard from '../Cards/LoadingListCard'

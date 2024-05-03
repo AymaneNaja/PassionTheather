@@ -1,5 +1,5 @@
 'use client'
-import { useGetAiringTodayQuery } from '@/api/redux/TmdbApi'
+import { useGetAiringTodayQuery } from '@/redux/TmdbApi'
 import React from 'react'
 import ListCard from '../Cards/ListCard'
 import LoadingListCard from '../Cards/LoadingListCard'

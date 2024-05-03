@@ -1,5 +1,5 @@
 'use client'
-import { useGetTrendingtvShowsQuery } from '@/api/redux/TmdbApi'
+import { useGetTrendingtvShowsQuery } from '@/redux/TmdbApi'
 import React from 'react'
 import ListCard from '../Cards/ListCard'
 import LoadingListCard from '../Cards/LoadingListCard'

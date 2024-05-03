@@ -1,6 +1,6 @@
 import React from 'react'
 import ListCard from '../Cards/ListCard'
-import { useGetRecommendationQuery } from '@/api/redux/TmdbApi'
+import { useGetRecommendationQuery } from '@/redux/TmdbApi'
 import LoadingListCard from '../Cards/LoadingListCard'
 
 type Props = {

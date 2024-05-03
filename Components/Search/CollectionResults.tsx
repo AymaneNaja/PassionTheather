@@ -1,5 +1,5 @@
 'use client'
-import { useGetSearchCollectionQuery, useGetSearchMovieQuery } from '@/api/redux/TmdbApi'
+import { useGetSearchCollectionQuery, useGetSearchMovieQuery } from '@/redux/TmdbApi'
 import { nanoid } from '@reduxjs/toolkit'
 import Link from 'next/link'
 import React from 'react'

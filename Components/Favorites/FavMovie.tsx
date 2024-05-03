@@ -1,6 +1,6 @@
 import React from 'react'
 import { SingleCard } from '../Cards/SingleCard'
-import { useGetMovieQuery, useGetTvshowQuery } from '@/api/redux/TmdbApi'
+import { useGetMovieQuery, useGetTvshowQuery } from '@/redux/TmdbApi'
 
 type Props = { id: string, type: string, showMore: boolean }
 

@@ -1,5 +1,5 @@
 'use client'
-import { useGetTvByParamsQuery } from '@/api/redux/TmdbApi'
+import { useGetTvByParamsQuery } from '@/redux/TmdbApi'
 import React, { useState } from 'react'
 import ListCard from '../Cards/ListCard'
 import LoadingListCard from '../Cards/LoadingListCard'

@@ -1,5 +1,5 @@
 'use client'
-import { useGetSearchMovieQuery } from '@/api/redux/TmdbApi'
+import { useGetSearchMovieQuery } from '@/redux/TmdbApi'
 import React from 'react'
 import ListCard from '../Cards/ListCard'
 import LoadingListCard from '../Cards/LoadingListCard'

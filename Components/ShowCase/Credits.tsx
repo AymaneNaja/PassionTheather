@@ -1,6 +1,6 @@
 'use client'
 import { PersonCard } from '../Cards/PerSonCard';
-import { useGetCreditsQuery } from '@/api/redux/TmdbApi'
+import { useGetCreditsQuery } from '@/redux/TmdbApi'
 import Link from 'next/link'
 import React from 'react'
 import { AiTwotoneHeart } from 'react-icons/ai'

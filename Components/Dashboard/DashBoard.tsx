@@ -1,5 +1,5 @@
 'use client'
-import { useGetAllTrendingQuery } from '@/api/redux/TmdbApi';
+import { useGetAllTrendingQuery } from '@/redux/TmdbApi';
 import { DashboardSlide } from './DashboardSlide'
 import React, { useState } from 'react';
 import DashGenres from './DashGenres';
